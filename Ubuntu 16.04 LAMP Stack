@@ -1,0 +1,42 @@
+# Get your Ubuntu OS up to date
+
+sudo apt-get update
+sudo apt-get upgrade
+
+# Installing Apache on Ubuntu 16.04
+apt-get install apache2 libapache2-mod-php
+systemctl enable apache2
+systemctl start apache2
+systemctl status apache2
+# verify that Apache is really running by opening your favorite web browser and entering the URL http://your-server’s-address
+
+# Installing MySQL on Ubuntu 16.04
+apt-get install mysql-server php7.0-mysql
+systemctl status mysql
+systemctl start mysql
+
+# Security Hardening your MySQL installation
+mysql_secure_installation
+
+# To login to the database:
+# mysql -u root -p
+
+# Installing PHP 7 on Ubuntu 16.04
+sudo apt-get install php7.0 php7.0-mysql php7.0-curl php7.0-gd php7.0-json php7.0-opcache php7.0-xml mcrypt php7.0-mcrypt
+
+# if you like to search all the available PHP 7 modules you can use to command:
+# sudo apt-cache search php7-*
+
+# Your server should restart Apache automatically after the installation of both MySQL and PHP. If it doesn’t, execute this command:
+sudo systemctl restart apache2
+sudo systemctl restart mysql
+
+# To test PHP, create a test file named info.php with he content below. Save the file, then browse to it to see if PHP is working:
+nano /var/www/html/info.php
+
+# Insert
+<?php
+phpinfo();
+?>
+
+# Try to access it at http://your_server_ip/info.php
