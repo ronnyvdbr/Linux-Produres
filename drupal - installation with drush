@@ -1,0 +1,3 @@
+drush dl drupal --drupal-project-rename=example
+cd example
+drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site- name=example
