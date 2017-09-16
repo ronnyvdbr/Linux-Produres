@@ -1,0 +1,17 @@
+# log into sql server
+mysql -u root -p
+# enter your password
+
+# create user account for database
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+
+# create your database
+create database mydatabase;
+use mydatabase
+
+# set permissions for your user account on your database
+GRANT ALL PRIVILEGES ON mydatabase.* TO 'newuser'@'localhost';
+
+# change database user password if necessary
+use mysql;
+SET PASSWORD FOR 'newuser'@'localhost' = PASSWORD('new-password-here');
