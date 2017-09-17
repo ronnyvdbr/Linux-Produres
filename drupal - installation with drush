@@ -1,4 +1,5 @@
 drush dl drupal --destination="/var/www/it-intranet.excentis.com" --drupal-project-rename="public_html"
 drush site-install standard --db-url='mysql://excentis_it_intranet:DB_PASS@localhost/DB_NAME' --site-name=excentis_it_intranet
-User name: admin  User password: SLQdkARLG9
 chown -R www-data ./public_html/
+User name: admin  User password: SLQdkARLG9
+
