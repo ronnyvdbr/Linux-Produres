@@ -1,0 +1,15 @@
+a2enmod rewrite
+a2dissite 000-default
+mkdir -p /var/www/it-intranet.excentis.com/public_html
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/it-intranet.excentis.com.conf
+vi /etc/apache2/sites-available/it-intranet.excentis.com.conf
+
+DocumentRoot /var/www/it-intranet.excentis.com/public_html
+
+        <Directory "/var/www/it-intranet.excentis.com/public_html">
+                AllowOverride All
+        </Directory>
+
+
+
+service apache2 reload
